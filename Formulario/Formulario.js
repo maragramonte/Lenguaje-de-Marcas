@@ -72,6 +72,16 @@ document.addEventListener("DOMContentLoaded", function () {
             <div id="score-container">Tu nota final es: ${score.toFixed(2)}</div>
         `;
 
+        // Resetear los colores de fondo y eliminar mensajes de respuesta correcta previos
+        const allQuestions = document.querySelectorAll('.question');
+        allQuestions.forEach(question => {
+            question.style.backgroundColor = '';
+            const existingCorrectAnswer = question.querySelector('p[style*="color: #721c24"]');
+            if (existingCorrectAnswer) {
+                question.removeChild(existingCorrectAnswer);
+            }
+        });
+
         for (const question in correctAnswers) {
             const userAnswer = userAnswers[question];
             const correctAnswer = correctAnswers[question];
@@ -188,8 +198,8 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(intervalo);
     }
 
-    // Función para reiniciar el formulario
-    function resetForm() {
+    // Función para reiniciar el formulario - Hacerla global
+    window.resetForm = function() {
         console.log("Función resetForm ejecutada."); // Mensaje de depuración
 
         const form = document.getElementById("quizForm");
@@ -198,6 +208,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (form) {
             console.log("Formulario encontrado. Restableciendo..."); // Mensaje de depuración
             form.reset(); // Restablece todos los campos del formulario
+            
+            // Limpiar fondos de preguntas y mensajes de respuesta correcta
+            const allQuestions = document.querySelectorAll('.question');
+            allQuestions.forEach(question => {
+                question.style.backgroundColor = '';
+                const existingCorrectAnswer = question.querySelector('p[style*="color: #721c24"]');
+                if (existingCorrectAnswer) {
+                    question.removeChild(existingCorrectAnswer);
+                }
+            });
         } else {
             console.error("No se encontró el formulario con ID 'quizForm'.");
         }
@@ -218,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         startTimer(); // Reinicia el temporizador
         console.log("Formulario reiniciado correctamente."); // Mensaje de depuración
-    }
+    };
 
     // Event Listeners
     if (startButton) {
