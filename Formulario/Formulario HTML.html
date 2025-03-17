@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="Formulario.css">
+    <link rel="icon" type="image/png" href="Favicon.png">
+</head>
+
+<body>
+    <!-- Temporizador -->
+    <div class="timer-container">
+        <h2>TEMPORIZADOR</h2>
+        <div id="timer">5:00</div>
+        <button id="start-button">Start</button>
+        <button id="stop-button">Stop</button>
+    </div>
+
+    <!-- Formulario -->
+    <form id="quizForm" onsubmit="validateAnswers(event)">
+        <!-- Pregunta 1 - Radio -->
+        <div class="question">
+            <p>1ª ¿En qué año comenzó la Primera Guerra Mundial?</p>
+            <input type="radio" id="question1-1" name="question1" value="1910"> <label
+                for="question1-1">1910</label><br>
+            <input type="radio" id="question1-2" name="question1" value="1912"> <label
+                for="question1-2">1912</label><br>
+            <input type="radio" id="question1-3" name="question1" value="1914"> <label
+                for="question1-3">1914</label><br>
+            <input type="radio" id="question1-4" name="question1" value="1916"> <label
+                for="question1-4">1916</label><br>
+        </div>
+
+        <!-- Pregunta 2 - Select -->
+        <div class="question">
+            <p>2ª ¿Quién fue el líder principal de la Revolución Cubana?</p>
+            <select id="question2" name="question2" required>
+                <option value="" hidden>Selecciona una opción</option>
+                <option value="Che Guevara">Ernesto "Che" Guevara</option>
+                <option value="Fidel Castro">Fidel Castro</option>
+                <option value="Hugo Chávez">Hugo Chávez</option>
+                <option value="Salvador Allende">Salvador Allende</option>
+            </select>
+        </div>
+
+        <!-- Pregunta 3 - Checkbox -->
+        <div class="question">
+            <p>3ª ¿Qué civilización construyó las pirámides de Giza?</p>
+            <input type="checkbox" id="question3-1" name="question3" value="Los Mayas"> <label for="question3-1">Los
+                Mayas</label><br>
+            <input type="checkbox" id="question3-2" name="question3" value="Los Aztecas"> <label for="question3-2">Los
+                Aztecas</label><br>
+            <input type="checkbox" id="question3-3" name="question3" value="Los Egipcios"> <label for="question3-3">Los
+                Egipcios</label><br>
+            <input type="checkbox" id="question3-4" name="question3" value="Los Sumerios"> <label for="question3-4">Los
+                Sumerios</label><br>
+        </div>
+
+        <!-- Pregunta 4 - Text -->
+        <div class="question">
+            <p>4ª ¿Qué guerra fue librada entre 1939 y 1945?</p>
+            <input type="text" id="question4" name="question4" required>
+        </div>
+
+        <!-- Pregunta 5 - Radio -->
+        <div class="question">
+            <p>5ª ¿Quién es el dios griego del vino y las fiestas?</p>
+            <input type="radio" id="question5-1" name="question5" value="Hermes"> <label
+                for="question5-1">Hermes</label><br>
+            <input type="radio" id="question5-2" name="question5" value="Dionisio"> <label
+                for="question5-2">Dionisio</label><br>
+            <input type="radio" id="question5-3" name="question5" value="Hades"> <label
+                for="question5-3">Hades</label><br>
+            <input type="radio" id="question5-4" name="question5" value="Poseidón"> <label
+                for="question5-4">Poseidón</label><br>
+        </div>
+
+        <!-- Pregunta 6 - Select -->
+        <div class="question">
+            <p>6ª ¿Cómo se llama la diosa griega de la sabiduría y la estrategia?</p>
+            <select id="question6" name="question6" required>
+                <option value="" hidden>Selecciona una opción</option>
+                <option value="Deméter">Deméter</option>
+                <option value="Artemisa">Artemisa</option>
+                <option value="Atenea">Atenea</option>
+                <option value="Hera">Hera</option>
+            </select>
+        </div>
+
+        <!-- Pregunta 7 - Checkbox -->
+        <div class="question">
+            <p>7ª ¿Qué dios romano es conocido como el dios del sol y la música?</p>
+            <input type="checkbox" id="question7-1" name="question7" value="Marte"> <label
+                for="question7-1">Marte</label><br>
+            <input type="checkbox" id="question7-2" name="question7" value="Apolo"> <label
+                for="question7-2">Apolo</label><br>
+            <input type="checkbox" id="question7-3" name="question7" value="Júpiter"> <label
+                for="question7-3">Júpiter</label><br>
+            <input type="checkbox" id="question7-4" name="question7" value="Neptuno"> <label
+                for="question7-4">Neptuno</label><br>
+        </div>
+
+        <!-- Pregunta 8 - Text -->
+        <div class="question">
+            <p>8ª ¿Qué criatura mitológica de la mitología egipcia tenía el cuerpo de un león y la cabeza de una mujer?
+            </p>
+            <input type="text" id="question8" name="question8" required>
+        </div>
+
+        <!-- Pregunta 9 - Radio -->
+        <div class="question">
+            <p>9ª ¿En qué año se produjo la caída del Muro de Berlín?</p>
+            <input type="radio" id="question9-1" name="question9" value="1987"> <label
+                for="question9-1">1987</label><br>
+            <input type="radio" id="question9-2" name="question9" value="1989"> <label
+                for="question9-2">1989</label><br>
+            <input type="radio" id="question9-3" name="question9" value="1991"> <label
+                for="question9-3">1991</label><br>
+            <input type="radio" id="question9-4" name="question9" value="1993"> <label
+                for="question9-4">1993</label><br>
+        </div>
+
+        <!-- Pregunta 10 - Select -->
+        <div class="question">
+            <p>10ª ¿Quién fue el héroe griego que realizó los doce trabajos?</p>
+            <select id="question10" name="question10" required>
+                <option value="" hidden>Selecciona una opción</option>
+                <option value="Perseo">Perseo</option>
+                <option value="Aquiles">Aquiles</option>
+                <option value="Heracles">Heracles o Hércules</option> <!-- Valor único -->
+                <option value="Teseo">Teseo</option>
+            </select>
+        </div>
+
+        <form id="quizForm" onsubmit="validateAnswers(event)">
+            <!-- Botones de enviar y reiniciar -->
+            <div class="button-container">
+                <button type="submit" class="submit-button">Enviar</button>
+                <button type="button" class="reset-button" onclick="resetForm()">Reiniciar</button>
+            </div>
+        
+            <!-- Contenedor para los resultados -->
+            <div id="results-container"></div>
+        </form>
+    </form>
+
+    <!-- Contenedor único para resultados y puntuación -->
+    <div id="results-container">
+        <h2>Resultados:</h2>
+        <div id="score-container"></div>
+        <!-- Aquí se mostrarán las correcciones de las preguntas -->
+    </div>
+
+    <!-- Script para validar las respuestas -->
+    <script src="Formulario.js"></script>
+</body>
+
+</html>

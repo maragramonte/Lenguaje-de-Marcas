@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/* Estilos generales */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url('https://images.pexels.com/photos/9176254/pexels-photo-9176254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    margin: 0;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Estilos generales para ambos formularios */
+form, .container {
+    background-color: #f8be99; /* Color de fondo */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #8b7355;
+    max-width: 750px; /* Ancho máximo del formulario */
+    width: 100%; /* Ocupa el 100% del espacio disponible */
+    margin: 20px auto; /* Centrar el formulario */
+}
+#results-container {
+    display: none; /* Ocultar inicialmente */
+    color: white;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #4CAF50; /* Verde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#results-container h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#score-container {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilos para los títulos */
+form h1, form h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4a3f35;
+    font-size: 24px; /* Tamaño de fuente */
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 90%; /* Ocupa el 100% del espacio disponible */
+    margin: 20px auto; /* Centrar el formulario */
+    padding: 20px;
+    margin-top: 5px;
+    border: 2px solid #8b7355;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff; /* Fondo blanco para los campos */
+}
+
+/* Estilos para los botones */
+.submit-button, .reset-button, .register-button {
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Hace que ambos botones tengan el mismo ancho */
+}
+
+.submit-button {
+    background-color: #4CAF50; /* Verde */
+}
+
+.submit-button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.reset-button {
+    background-color: #f44336; /* Rojo */
+}
+
+.reset-button:hover {
+    background: #e53935;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.register-button {
+    background-color: #007bff; /* Azul */
+}
+
+.register-button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para las preguntas y secciones */
+.question, .registration-section {
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos para el contenedor del cronómetro */
+.timer-container {
+    position: fixed; /* Fija el cronómetro en la pantalla */
+    top: 10px; /* Lo coloca en la parte superior */
+    right: 10px; /* Lo coloca en el lado derecho */
+    background-color: #f8be99; /* Color de fondo */
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid #8b7355; /* Color de fondo */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilos para el texto del cronómetro */
+#timer {
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color del texto */
+}
+
+/* Estilos para los botones del cronómetro */
+#start-button, #stop-button {
+    margin: 5px; /* Margen entre botones */
+    padding: 5px 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+}
+
+#start-button{
+    background-color: #4CAF50; /* Verde */
+}
+#stop-button{
+    background-color: #f44336; /* Rojo */
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        font-size: 14px; /* Reduce el tamaño de la fuente en móviles */
+    }
+
+    .submit-button, .reset-button, .register-button {
+        padding: 10px 20px; /* Reduce el padding en móviles */
+        font-size: 14px; /* Reduce el tamaño de la fuente en móviles */
+    }
+
+}

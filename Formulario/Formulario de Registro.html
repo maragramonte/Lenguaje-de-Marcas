@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario</title>
+        <link rel="stylesheet" href="Formulario.css">
+        <link rel="icon" type="image/png" href="Favicon.png">
+    </head>
+
+<body>
+    <form id="registrationForm" onsubmit="validateAndRedirect(event)">
+        <!-- Sección de Registro -->
+        <div class="registration-section">
+            <h2>Registro</h2>
+            <div class="question">
+                <p> Nombre completo </p>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="question">
+                <p> Correo electrónico </p>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="question">
+                <p> Contraseña </p>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="question">
+                <p> Confirmar contraseña </p>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+        </div>
+
+        <!-- Botón de enviar -->
+        <form id="registrationForm" onsubmit="validateRegistration(event)">
+            <!-- Campos de registro -->
+            <div class="button-container">
+                <button type="submit" class="submit-button" alt="Si quieres seguir debes Clicarme">Listo</button>
+            </div>
+        </form>
+
+        <!-- Script para validación y redirección -->
+        <script>
+            function validateAndRedirect(event) {
+                event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+                // Validar que las contraseñas coincidan
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                if (password !== confirmPassword) {
+                    alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+                    return; // Detiene la ejecución si las contraseñas no coinciden
+                }
+
+                // Si todo está bien, redirigir al formulario de preguntas
+                window.location.href = "Formulario HTML.html"; // Cambia "Formulario HTML.html" por la ruta correcta
+            }
+        </script>
+</body>
+
+</html>
