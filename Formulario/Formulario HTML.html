@@ -134,24 +134,23 @@
             </select>
         </div>
 
-        <form id="quizForm" onsubmit="validateAnswers(event)">
-            <!-- Botones de enviar y reiniciar -->
-            <div class="button-container">
-                <button type="submit" class="submit-button">Enviar</button>
-                <button type="button" class="reset-button" onclick="resetForm()">Reiniciar</button>
-            </div>
-        
-            <!-- Contenedor para los resultados -->
-            <div id="results-container"></div>
-        </form>
-    </form>
-
-    <!-- Contenedor único para resultados y puntuación -->
-    <div id="results-container">
-        <h2>Resultados:</h2>
-        <div id="score-container"></div>
-        <!-- Aquí se mostrarán las correcciones de las preguntas -->
+<!-- Debería ser así: -->
+<form id="quizForm">
+    <!-- ... todas tus preguntas ... -->
+    
+    <!-- Botones de enviar y reiniciar -->
+    <div class="button-container">
+        <button type="submit" class="submit-button">Enviar</button>
+        <button type="button" class="reset-button" onclick="resetForm()">Reiniciar</button>
     </div>
+</form>
+
+<!-- Un solo contenedor para resultados y puntuación -->
+<div id="results-container" style="display: none">
+    <h2>Resultados:</h2>
+    <div id="score-container"></div>
+    <!-- Aquí se mostrarán las correcciones de las preguntas -->
+</div>
 
     <!-- Script para validar las respuestas -->
     <script src="Formulario.js"></script>
